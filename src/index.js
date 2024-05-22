@@ -1,3 +1,4 @@
+import { destroyDOM } from "./destroy-dom.js"
 import { h, hFragment } from "./h.js"
 import { mountDOM } from "./mount-dom.js"
 
@@ -22,3 +23,7 @@ let dom = hFragment([
 
 
 mountDOM(dom, document.body)
+
+setTimeout(() => {
+    destroyDOM(dom)
+}, 5000)
