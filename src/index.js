@@ -1,4 +1,5 @@
 import { h, hFragment } from "./h.js"
+import { mountDOM } from "./mount-dom.js"
 
 
 const todos = ["code", "eat", "sleep"]
@@ -6,8 +7,18 @@ function TodosList(todos) {
     return h('ul', {}, todos.map((todo) => h('li', {}, [todo])))
     }
 let dom = hFragment([
-    h("h1", {className: "title"}, ["Todos"]),
-    TodosList(todos)
+    h("h1", {className: "title", on:  {
+        click: () => console.log("clicked")
+    }}, ["Todos"]),
+    TodosList(todos),
+    h("input", {
+        value: "ok",
+        type: "text",
+        style: {
+            width: "500px"
+        }
+    })
 ])
 
-console.log(dom)
+
+mountDOM(dom, document.body)

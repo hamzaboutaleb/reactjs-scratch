@@ -1,7 +1,7 @@
 import { mapTextNode, withoutNulls } from "./utils/arrays.js"
 
 
-const DOM_TYPE = {
+export const DOM_TYPE = {
     TEXT : "TEXT",
     ELEMENT : "ELEMENT",
     FRAGMENT: "FRAGMENT"
