@@ -34,7 +34,7 @@ export class Dispatcher {
     }
 
     dispatch(commandeName, payload) {
-        if (!this.#subs.has(commandeName)) {
+        if (this.#subs.has(commandeName)) {
             this.#subs.get(commandeName).forEach(handler => handler(payload))
         } else {
             console.warn(`No handlers for command: ${commandeName}`)

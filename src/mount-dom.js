@@ -56,7 +56,6 @@ function createElementNode(vDom, parentEl) {
 function addProps(element, props, vDom) {
     const {on: events, ...attrs} = props
     vDom.listeners = addEventListeners(events, element)
-    console.log(vDom)
     setAttributes(element, attrs)
 }
 
